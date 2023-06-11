@@ -1,0 +1,482 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap';
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 10px;    
+	font-family: 'Shippori Mincho', serif;
+	scroll-behavior: smooth;
+}
+a {
+	text-decoration: none;
+}
+.container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: black;
+	/* color: white; */
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	text-align: center;
+}
+.section-title span {
+	color: aqua;
+}
+
+.cta {
+	display: inline-block;
+	padding: 10px 30px;
+	color: white;
+	background-color: transparent;
+	border: 2px solid crimson;
+	/* border: 2px solid black; */
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: .1rem;
+	margin-top: 30px;
+	transition: .3s ease;
+	transition-property: background-color, color;
+}
+.cta:hover {
+	color: white;
+	background-color: crimson;
+	/* background-color: black; */
+}
+.brand h1 {
+	font-size: 3rem;
+	text-transform: uppercase;
+	color: white;
+}
+.brand h1 span {
+	color: aqua;
+}
+
+/* Header section */
+#header {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
+}
+#header .header {
+	min-height: 8vh;
+	background-color: rgba(31, 30, 30, 0.24);
+	/* background-color: black; */
+	transition: .3s ease background-color;
+}
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+#header .nav-list ul {
+	list-style: none;
+	position: absolute;
+	background-color: rgb(31, 30, 30);
+	/* background-color: black; */
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: .5s ease left;
+}
+#header .nav-list ul.active {
+	left: 0%;
+}
+#header .nav-list ul a {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: .2rem;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
+}
+#header .nav-list ul a::after {
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	/* color: rgba(240, 248, 255, 0.021); */
+	color: black;
+	font-size: 13rem;
+	letter-spacing: 50px;
+	z-index: -1;
+	transition: .3s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+#header .nav-list ul li:hover a {
+	color: crimson;
+}
+#header .hamburger {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid white;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(.8);
+	margin-right: 20px;
+}
+#header .hamburger:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+	animation: hamburger_puls 1s ease infinite;
+}
+#header .hamburger .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: white;
+	z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: white;
+	transition: .3s ease;
+	transition-property: top, bottom;
+}
+#header .hamburger .bar::after {
+	top: 8px;
+}
+#header .hamburger .bar::before {
+	bottom: 8px;
+}
+#header .hamburger.active .bar::before {
+	bottom: 0;
+}
+#header .hamburger.active .bar::after {
+	top: 0;
+}
+/* End Header section */
+
+/************************************************************************************************************
+Start Home Section
+*************************************************************************************************************/
+#home
+{
+    width: 100%;
+    height: 500px;
+    
+}
+#home .home_box h1
+{
+   text-align: center;
+   margin-top: 100px;
+
+}
+
+/*******Home slider**********/
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img 
+{
+	vertical-align: middle;
+	height: 500px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  border: 1px solid white;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-left: 20px;
+  position: absolute;
+  bottom: 38%;
+  text-align: center;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+  .slideshow-container {
+	max-width: 100%;
+	height: 350px;
+	position: relative;
+	margin: auto;
+	border: 1px solid white;
+  }
+  img 
+  {
+	  vertical-align: middle;
+	  height: 350px;
+  }
+}
+/************************************************************************************************************
+End Home Section
+*************************************************************************************************************/
+
+/************************************************************************************************************
+Start About Section
+*************************************************************************************************************/
+#about
+{
+    width: 100%;
+    height: 500px;
+    border: 1px solid black;
+    background-color: green;
+}
+#about .about_box h1
+{
+   text-align: center;
+   margin-top: 100px;
+
+}
+
+/************************************************************************************************************
+End About Section
+*************************************************************************************************************/
+
+/************************************************************************************************************
+Start Story Section
+*************************************************************************************************************/
+#story
+{
+    width: 100%;
+    height: 500px;
+    border: 1px solid black;
+    background-color: yellow;
+}
+#story .story_box h1
+{
+   text-align: center;
+   margin-top: 100px;
+
+}
+
+/************************************************************************************************************
+End Story Section
+*************************************************************************************************************/
+
+/************************************************************************************************************
+Start Gallery Section
+*************************************************************************************************************/
+#gallery
+{
+    width: 100%;
+    height: 500px;
+    border: 1px solid black;
+    background-color: blue;
+}
+#gallery .gallery_box h1
+{
+   text-align: center;
+   margin-top: 100px;
+
+}
+
+/************************************************************************************************************
+End Gallery Section
+*************************************************************************************************************/
+
+/************************************************************************************************************
+Start Wish Section
+*************************************************************************************************************/
+#contact
+{
+    width: 100%;
+    height: 500px;
+    border: 1px solid black;
+    background-color: pink;
+}
+#contact .contact_box h1
+{
+   text-align: center;
+   margin-top: 100px;
+
+}
+
+/************************************************************************************************************
+End Wish Section
+*************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************************************************************************************************************
+Start Footer Section
+*************************************************************************************************************/
+
+#footer {
+	
+	background-color: black;
+}
+#footer .footer {
+	min-height: 80px;
+	flex-direction: column;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+#footer h2 {
+	color: white;
+	font-weight: 500;
+	font-size: 1.8rem;
+	letter-spacing: .1rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#footer p {
+	color: white;
+	font-size: 1.3rem;
+}
+
+/************************************************************************************************************
+End Footer Section
+*************************************************************************************************************/
+
+
+/* Keyframes */
+@keyframes hamburger_puls {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+}
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+@keyframes text_reveal {
+	100% {
+		color: white;
+	}
+}
+@keyframes text_reveal_name {
+	100% {
+		color: aqua;
+		font-weight: 500;
+	}
+}
+/* End Keyframes */
+
+/* Media Query For Tablet */
+@media only screen and (min-width: 768px) {
+	.cta {
+		font-size: 2.5rem;
+		padding: 20px 60px;
+	}
+	h1.section-title {
+		font-size: 6rem;
+	}
+
+}
+/* End Media Query For Tablet */
+
+/* Media Query For Desktop */
+@media only screen and (min-width: 1200px) {
+	/* header */
+	#header .hamburger {
+		display: none;
+	}
+	#header .nav-list ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+	}
+	#header .nav-list ul li {
+		display: inline-block;
+	}
+	#header .nav-list ul li a {
+		font-size: 1.8rem;
+	}
+	#header .nav-list ul a:after {
+		display: none;
+	}
+	/* End header */
+
+}
+/* End  Media Query For Desktop */
